@@ -22,7 +22,7 @@ jobs:
         run: ./gradlew build
 
       - name: Download Checkstyle
-        run: curl -L -o checkstyle.jar https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.12/checkstyle-8.12-all.jar
+        run: curl -L -o checkstyle.jar https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.13/checkstyle-10.13-all.jar
 
       - name: Run Checkstyle
         run: |
