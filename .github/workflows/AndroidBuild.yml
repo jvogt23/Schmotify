@@ -21,12 +21,9 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-      - name: Download Checkstyle
-        run: curl -L -o checkstyle.jar https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.13.0/checkstyle-10.13.0-all.jar
-
       - name: Run Checkstyle
         run: |
-          find . -name '*.java' -print0 | xargs -0 java -jar checkstyle-10.13.0-all.jar -c 'app/config/checkstyle/checkstyle.xml'
+          find . -name '*.java' -print0 | xargs -0 java -jar 'app/config/checkstyle/checkstyle-10.13.0-all.jar' -c 'app/config/checkstyle/checkstyle.xml'
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.3.1
