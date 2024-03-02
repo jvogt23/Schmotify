@@ -1,5 +1,12 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC
+    "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+    "http://www.puppycrawl.com/dtds/configuration_1_3.dtd"> 
 <module name="Checker">
+
+<module name="LineLength">
+<property name="max" value="120"/>
+</module>
 <!-- 
         If you set the basedir property below, then all reported file
         names will be relative to the specified directory. See
@@ -42,9 +49,7 @@
 <module name="UnusedImports"/>
 <!--  Checks for Size Violations.                     -->
 <!--  See http://checkstyle.sf.net/config_sizes.html  -->
-<module name="LineLength">
-<property name="max" value="120"/>
-</module>
+
 <module name="MethodLength"/>
 <module name="ParameterNumber"/>
 <!--  Checks for whitespace                                -->
@@ -83,7 +88,7 @@
 <module name="AbbreviationAsWordInName"/>
 <!--  Javadoc checks.                               -->
 <module name="JavadocMethod">
-<property name="allowUndeclaredRTE" value="true"/>
+<!--<property name="allowUndeclaredRTE" value="true"/> -->
 <property name="allowedAnnotations" value="Override, Test, Before, After, BeforeClass, AfterClass"/>
 </module>
 <module name="JavadocStyle">
