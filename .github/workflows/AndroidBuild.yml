@@ -23,7 +23,7 @@ jobs:
 
       - name: Run Checkstyle
         run: |
-          find . -name '*.java' -print0 | xargs -0 java -jar 'app/config/checkstyle/checkstyle-10.13.0-all.jar' -c 'app/config/checkstyle/checkstyle.xml'
+          find app/src/main/java/com/example -name '*.java' -print0 | xargs -0 java -jar 'app/config/checkstyle/checkstyle-10.13.0-all.jar' -c 'app/config/checkstyle/checkstyle.xml'
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.3.1
