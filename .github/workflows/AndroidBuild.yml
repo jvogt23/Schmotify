@@ -25,7 +25,8 @@ jobs:
         run: curl -L -o checkstyle.jar https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.12/checkstyle-8.12-all.jar
 
       - name: Run Checkstyle
-        run: java -jar checkstyle.jar -c 'app/config/checkstyle/checkstyle.xml' 'app/**/*.java'
+        run: |
+          find . -name '*.java' -print0 | xargs -0 java -jar checkstyle.jar -c 'app/config/checkstyle/checkstyle.xml'
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.3.1
