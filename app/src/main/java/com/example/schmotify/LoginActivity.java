@@ -3,22 +3,14 @@ package com.example.schmotify;
 import android.os.Bundle;
 
 import com.example.schmotify.databinding.ActivityLoginBinding;
-import com.example.schmotify.databinding.ActivityMainBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.widget.TextView;
 
-import androidx.core.view.WindowCompat;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
-
-import com.example.schmotify.databinding.ActivityLoginBinding;
-
-import com.example.schmotify.R;
 
 public class LoginActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
@@ -36,5 +28,27 @@ public class LoginActivity extends AppCompatActivity {
                         .findFragmentById(R.id.nav_host_fragment_activity_login);
         assert navHostFragment != null;
         NavController navController = navHostFragment.getNavController();
+
+
+        TextView sign2Reg = (TextView) findViewById(R.id.signToReg);
+        sign2Reg.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View view)
+            {
+                navController.navigate(R.id.action_navigation_login_to_navigation_register);
+            }
+        });
+
+        TextView reg2Sign = (TextView) findViewById(R.id.regToSign);
+        reg2Sign.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View view)
+            {
+                navController.navigate(R.id.action_navigation_register_to_navigation_login);
+            }
+        });
+
+
+
     }
 }
