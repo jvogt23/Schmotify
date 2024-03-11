@@ -1,4 +1,4 @@
-package com.example.schmotify.ui.login.ui.login;
+package com.example.schmotify.ui.login;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

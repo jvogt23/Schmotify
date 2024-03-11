@@ -1,4 +1,4 @@
-package com.example.schmotify.ui.login.ui.login;
+package com.example.schmotify.ui.login;
 
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
