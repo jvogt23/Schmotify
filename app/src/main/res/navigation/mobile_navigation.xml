@@ -20,9 +20,9 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.schmotify.ui.dashboard.DashboardFragment"
+        android:name="com.example.schmotify.ui.dashboard.FriendsFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" >
+        tools:layout="@layout/fragment_friends" >
         <action
             android:id="@+id/action_navigation_dashboard_to_navigation_notifications"
             app:destination="@id/navigation_notifications" />
