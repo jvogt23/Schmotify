@@ -9,7 +9,7 @@ import android.util.Patterns;
 import com.example.schmotify.ui.login.data.LoginRepository;
 import com.example.schmotify.ui.login.data.Result;
 import com.example.schmotify.ui.login.data.model.LoggedInUser;
-import com.example.schmotify.ui.login.R;
+import com.example.schmotify.R;
 
 public class LoginViewModel extends ViewModel {
 

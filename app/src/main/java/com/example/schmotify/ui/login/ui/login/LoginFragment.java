@@ -21,9 +21,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.schmotify.R;
 import com.example.schmotify.databinding.FragmentLoginBinding;
-
-import com.example.schmotify.ui.login.R;
 
 public class LoginFragment extends Fragment {
 
