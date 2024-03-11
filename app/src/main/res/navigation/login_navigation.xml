@@ -8,22 +8,34 @@
     <fragment
         android:id="@+id/navigation_login"
         android:name="com.example.schmotify.ui.login.LoginFragment"
-        android:label="@string/title_home"
+        android:label="@string/action_sign_in_short"
         tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_register"
+            app:destination="@id/navigation_register" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_register"
         android:name="com.example.schmotify.ui.login.RegisterFragment"
-        android:label="@string/title_home"
+        android:label="@string/action_register"
         tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_navigation_register_to_navigation_login"
+            app:destination="@id/navigation_login" />
+        <action
+            android:id="@+id/action_navigation_register_to_navigation_error"
+            app:destination="@id/navigation_error" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_error"
         android:name="com.example.schmotify.ui.login.ErrorFragment"
-        android:label="@string/title_home"
+        android:label="@string/registration_failed"
         tools:layout="@layout/fragment_error" >
+        <action
+            android:id="@+id/action_navigation_error_to_navigation_login"
+            app:destination="@id/navigation_login" />
     </fragment>
 
 
