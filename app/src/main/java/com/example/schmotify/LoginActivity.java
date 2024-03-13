@@ -7,6 +7,7 @@ import com.example.schmotify.databinding.ActivityLoginBinding;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.navigation.NavController;
@@ -30,6 +31,8 @@ public class LoginActivity extends AppCompatActivity {
         assert navHostFragment != null;
         NavController navController = navHostFragment.getNavController();
 
+
+
         TextView sign2Reg = (TextView) findViewById(R.id.signToReg);
         sign2Reg.setOnClickListener(new View.OnClickListener()
         {
@@ -39,12 +42,25 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
+
         TextView reg2Sign = (TextView) findViewById(R.id.regToSign);
         reg2Sign.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View view)
             {
                 navController.navigate(R.id.action_navigation_register_to_navigation_login);
+            }
+        });
+
+
+
+        Button retFromError = (Button) findViewById(R.id.retFromError);
+        reg2Sign.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View view)
+            {
+                navController.navigate(R.id.action_navigation_error_to_navigation_register);
             }
         });
     }
