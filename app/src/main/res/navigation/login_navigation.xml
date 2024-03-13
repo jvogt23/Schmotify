@@ -34,9 +34,6 @@
         android:label="@string/registration_failed"
         tools:layout="@layout/fragment_error" >
         <action
-            android:id="@+id/action_navigation_error_to_navigation_login"
-            app:destination="@id/navigation_login" />
-        <action
             android:id="@+id/action_navigation_error_to_navigation_register"
             app:destination="@id/navigation_register" />
     </fragment>

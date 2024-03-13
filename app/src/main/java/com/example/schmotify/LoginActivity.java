@@ -13,6 +13,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 public class LoginActivity extends AppCompatActivity {
+
     private ActivityLoginBinding binding;
 
     @Override
@@ -28,7 +29,6 @@ public class LoginActivity extends AppCompatActivity {
                         .findFragmentById(R.id.nav_host_fragment_activity_login);
         assert navHostFragment != null;
         NavController navController = navHostFragment.getNavController();
-
 
         TextView sign2Reg = (TextView) findViewById(R.id.signToReg);
         sign2Reg.setOnClickListener(new View.OnClickListener()
@@ -47,8 +47,5 @@ public class LoginActivity extends AppCompatActivity {
                 navController.navigate(R.id.action_navigation_register_to_navigation_login);
             }
         });
-
-
-
     }
 }
