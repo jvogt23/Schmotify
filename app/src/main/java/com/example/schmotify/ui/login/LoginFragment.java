@@ -1,16 +1,28 @@
 package com.example.schmotify.ui.login;
 
+
+
+import static android.content.ContentValues.TAG;
+
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 import android.widget.Button;
 
 import com.example.schmotify.R;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.*;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class LoginFragment extends Fragment {
@@ -26,6 +38,7 @@ public class LoginFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_login, container, false);
 
+        //***** THIS STATEMENT IS NEVER REACHED *****//
         mAuth = FirebaseAuth.getInstance();
     }
 
@@ -34,6 +47,7 @@ public class LoginFragment extends Fragment {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null) {
+            // Are you planning on implementing this?
             reload();
         }
     }
@@ -41,6 +55,7 @@ public class LoginFragment extends Fragment {
     public void signIn(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
