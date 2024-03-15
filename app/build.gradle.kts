@@ -1,3 +1,5 @@
+import java.util.regex.Pattern.compile
+
 plugins {
     id("com.android.application")
     // Add the Google services Gradle plugin
@@ -5,6 +7,17 @@ plugins {
 
 }
 
+buildscript {
+    repositories {
+        google() // Include Google's Maven repository
+        // other repositories if needed
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:7.0.4") // Android Gradle plugin version
+        classpath("com.google.gms:google-services:4.4.1") // Google services plugin
+        // other dependencies if needed
+    }
+}
 android {
     namespace = "com.example.schmotify"
     compileSdk = 34
@@ -48,15 +61,16 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     // Import the Firebase BoM
+    implementation("com.google.firebase:firebase-common:20.4.2")
     implementation(platform("com.google.firebase:firebase-bom:32.7.4"))
     implementation("com.google.firebase:firebase-core:21.1.1")
     implementation("com.google.firebase:firebase-auth:22.3.1")
     implementation("com.google.android.gms:play-services-auth:21.0.0")
 
-
     // TODO: Add the dependencies for Firebase products you want to use
     // When using the BoM, don't specify versions in Firebase dependencies
     implementation("com.google.firebase:firebase-analytics")
+
 
 
     // Add the dependencies for any other desired Firebase products
