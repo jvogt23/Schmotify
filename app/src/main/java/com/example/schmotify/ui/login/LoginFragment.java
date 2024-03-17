@@ -1,7 +1,5 @@
 package com.example.schmotify.ui.login;
 
-
-
 import static android.content.ContentValues.TAG;
 
 import android.os.Bundle;
@@ -35,11 +33,10 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        mAuth = FirebaseAuth.getInstance();
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_login, container, false);
-
-        //***** THIS STATEMENT IS NEVER REACHED *****//
-        mAuth = FirebaseAuth.getInstance();
     }
 
     @Override
@@ -72,7 +69,5 @@ public class LoginFragment extends Fragment {
                         }
                     }
                 });
-
     }
-
 }
