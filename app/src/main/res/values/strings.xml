@@ -5,11 +5,14 @@
     <string name="title_notifications">Notifications</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="register">register</string>
-    <string name="swipe_right_for_login">swipe right for login</string>
+    <string name="register">Register</string>
+    <string name="swipe_right_for_login">Return to login screen</string>
     <string name="re_type_password">confirm password</string>
     <string name="password">password</string>
     <string name="e_mail">email</string>
     <string name="your_name">username</string>
     <string name="tag">tag</string>
+    <string name="login">Login</string>
+    <string name="login2">login</string>
+    <string name="register_account">Don\'t have an account? Register here!</string>
 </resources>
