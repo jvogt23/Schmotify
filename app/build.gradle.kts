@@ -1,5 +1,3 @@
-import java.util.regex.Pattern.compile
-
 plugins {
     id("com.android.application")
     // Add the Google services Gradle plugin
@@ -7,13 +5,14 @@ plugins {
 
 }
 
+
 buildscript {
     repositories {
         google() // Include Google's Maven repository
         // other repositories if needed
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:7.0.4") // Android Gradle plugin version
+        classpath("com.android.tools.build:gradle:8.3.0") // Android Gradle plugin version
         classpath("com.google.gms:google-services:4.4.1") // Google services plugin
         // other dependencies if needed
     }
@@ -66,6 +65,8 @@ dependencies {
     implementation("com.google.firebase:firebase-core:21.1.1")
     implementation("com.google.firebase:firebase-auth:22.3.1")
     implementation("com.google.android.gms:play-services-auth:21.0.0")
+    implementation("com.spotify.android:auth:2.1.1")
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
 
     // TODO: Add the dependencies for Firebase products you want to use
     // When using the BoM, don't specify versions in Firebase dependencies
