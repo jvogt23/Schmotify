@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/token_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            tools:text="Token:" />
+
+        <Button
+            android:id="@+id/token_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Request Token" />
+
+        <TextView
+            android:id="@+id/code_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            tools:text="Code:" />
+
+        <Button
+            android:id="@+id/code_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Request Code" />
+
+        <TextView
+            android:id="@+id/response_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            tools:text="Line 1\nLine 2\nLine 3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/profile_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:text="Get User Profile" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textview_recommended"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recommended: " />
+
+        <Button
+            android:id="@+id/button_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recommend Something" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.example.spotifyintegrationtutorial.CardViewRecommendation
+                    android:id="@+id/rec1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.example.spotifyintegrationtutorial.CardViewRecommendation
+                    android:id="@+id/rec2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.example.spotifyintegrationtutorial.CardViewRecommendation
+                    android:id="@+id/rec3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.example.spotifyintegrationtutorial.CardViewRecommendation
+                    android:id="@+id/rec4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.example.spotifyintegrationtutorial.CardViewRecommendation
+                    android:id="@+id/rec5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

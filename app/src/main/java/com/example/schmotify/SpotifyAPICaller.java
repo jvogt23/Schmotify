@@ -19,8 +19,9 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class SpotifyAPICaller {
-    public static final String CLIENT_ID = "a490a8f4469741a8a198f15187f11ff8 ";
-    //Make this the redirect URI for the real project
+    //TODO: Make this the client ID for the real project
+    public static final String CLIENT_ID = "";
+    //TODO: Make this the redirect URI for the real project
     public static final String REDIRECT_URI = "com.example.spotifyintegrationtutorial://auth";
 
     public static final int AUTH_TOKEN_REQUEST_CODE = 0;
@@ -210,6 +211,9 @@ public class SpotifyAPICaller {
     private void cancelCall() {
         if (mCall != null) {
             mCall.cancel();
+        }
+        else {
+            System.out.println("aaa");
         }
     }
 
