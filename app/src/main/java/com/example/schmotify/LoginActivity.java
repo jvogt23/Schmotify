@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        TextView reg2Sign = (TextView) findViewById(R.id.regToSign);
+        TextView reg2Sign = (TextView) findViewById(R.id.returnToLogin);
         reg2Sign.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View view)
