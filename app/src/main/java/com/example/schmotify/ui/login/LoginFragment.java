@@ -11,9 +11,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Button;
 
+import com.example.schmotify.LoginActivity;
 import com.example.schmotify.R;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.*;
@@ -36,7 +38,18 @@ public class LoginFragment extends Fragment {
 
         mAuth = FirebaseAuth.getInstance();
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_login, container, false);
+        TextView sign2Reg = (TextView) rootView.findViewById(R.id.signToReg);
+        sign2Reg.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View view)
+            {
+                if (getActivity() instanceof LoginActivity) {
+                ((LoginActivity) getActivity()).onRegSwapClicked();
+                }
+            }
+        });
+        return rootView;
     }
 
     @Override
