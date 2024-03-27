@@ -102,7 +102,7 @@ public class SpotifyAPICaller {
         cancelCall();
         mCall = mOkHttpClient.newCall(artistRequest);
 
-        MutableLiveData<JSONObject> obj = new MutableLiveData<>();;
+        MutableLiveData<JSONObject> obj = new MutableLiveData<>();
         mCall.enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
