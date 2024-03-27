@@ -19,10 +19,8 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class SpotifyAPICaller {
-    //TODO: Make this the client ID for the real project
-    public static final String CLIENT_ID = "";
-    //TODO: Make this the redirect URI for the real project
-    public static final String REDIRECT_URI = "com.example.spotifyintegrationtutorial://auth";
+    public static final String CLIENT_ID = "a490a8f4469741a8a198f15187f11ff8";
+    public static final String REDIRECT_URI = "com.example.schmotify://auth";
 
     public static final int AUTH_TOKEN_REQUEST_CODE = 0;
     public static final int AUTH_CODE_REQUEST_CODE = 1;
@@ -41,15 +39,15 @@ public class SpotifyAPICaller {
      * user-follow-read
      * user-top-read
      * user-read-email
-     * @param AccessToken A token used for API calls.
+     * @param accessToken A token used for API calls.
      */
-    public SpotifyAPICaller(@Nullable String AccessToken) {
-        if (AccessToken == null && mAccessToken == null) {
+    public SpotifyAPICaller(@Nullable String accessToken) {
+        if (accessToken == null && mAccessToken == null) {
             throw new IllegalArgumentException(
                     "Access code or token provided was null and no code exists already."
             );
         }
-        mAccessToken = AccessToken;
+        mAccessToken = accessToken;
     }
 
 
@@ -192,7 +190,7 @@ public class SpotifyAPICaller {
         mCall.enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                Log.d("HTTP", "Failed to fetch data: " +e.toString());
+                Log.d("HTTP", "Failed to fetch data: " + e.toString());
             }
 
             @Override
@@ -211,8 +209,7 @@ public class SpotifyAPICaller {
     private void cancelCall() {
         if (mCall != null) {
             mCall.cancel();
-        }
-        else {
+        } else {
             System.out.println("aaa");
         }
     }
