@@ -28,6 +28,9 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        manifestPlaceholders["redirectSchemeName"] = "schmotify"
+        manifestPlaceholders["redirectHostName"] = "auth"
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
