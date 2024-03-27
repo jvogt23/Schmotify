@@ -47,7 +47,7 @@ public class LoginFragment extends Fragment {
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null) {
+        if (currentUser != null) {
             Log.d(TAG, "Success");
             // Are you planning on implementing this?
             //reload();
