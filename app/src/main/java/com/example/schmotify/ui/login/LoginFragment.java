@@ -11,12 +11,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
-import android.widget.Button;
+//import android.widget.Toast;
+//import android.widget.Button;
 
 import com.example.schmotify.R;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.*;
+//import com.google.firebase.*;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
@@ -30,7 +30,9 @@ public class LoginFragment extends Fragment {
     private FirebaseAuth mAuth;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {super.onCreate(savedInstanceState);}
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,6 +48,7 @@ public class LoginFragment extends Fragment {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null) {
+            Log.d(TAG, "Success");
             // Are you planning on implementing this?
             //reload();
         }
@@ -64,7 +67,7 @@ public class LoginFragment extends Fragment {
                             //updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());;
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
                             //updateUI(null);
                         }
                     }

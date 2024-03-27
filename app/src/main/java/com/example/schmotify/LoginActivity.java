@@ -34,10 +34,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
         TextView sign2Reg = (TextView) findViewById(R.id.signToReg);
-        sign2Reg.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View view)
-            {
+        sign2Reg.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
                 navController.navigate(R.id.action_navigation_login_to_navigation_register);
             }
         });
@@ -45,10 +43,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
         TextView reg2Sign = (TextView) findViewById(R.id.regToSign);
-        reg2Sign.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View view)
-            {
+        reg2Sign.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
                 navController.navigate(R.id.action_navigation_register_to_navigation_login);
             }
         });
@@ -56,10 +52,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
         Button retFromError = (Button) findViewById(R.id.retFromError);
-        reg2Sign.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View view)
-            {
+        reg2Sign.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
                 navController.navigate(R.id.action_navigation_error_to_navigation_register);
             }
         });

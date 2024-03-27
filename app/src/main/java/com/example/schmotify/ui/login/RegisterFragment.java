@@ -67,9 +67,9 @@ public class RegisterFragment extends Fragment {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-//                            Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",
-//                                    Toast.LENGTH_SHORT).show();
-//                            updateUI(null);
+                            //  Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",
+                            //          Toast.LENGTH_SHORT).show();
+                            //  updateUI(null);
                         }
                     }
                 });
