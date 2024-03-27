@@ -2,14 +2,16 @@ package com.example.schmotify;
 
 public class Account {
 
-    private final long ID;
+    private final String ID;
     private String username;
     private String password;
+    private String email;
     private String linkedSpotify;
 
-    public Account(int ID, String username, String password) {
+    public Account(String ID, String username, String email, String password) {
         this.ID = ID;
         this.username = username;
+        this.email = email;
         this.password = password;
     }
 
@@ -25,9 +27,11 @@ public class Account {
         this.linkedSpotify = linkedSpotify;
     }
 
-    public long getID() {
+    public String getID() {
         return ID;
     }
+
+    public String getEmail() { return email; }
 
     public String getUsername() {
         return username;
