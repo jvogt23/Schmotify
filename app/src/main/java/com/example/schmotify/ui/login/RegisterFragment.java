@@ -45,7 +45,9 @@ public class RegisterFragment extends Fragment {
         // Inflate the layout for this fragment
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
+
         View rootView = inflater.inflate(R.layout.fragment_register, container, false);
+
         TextView reg2Sign = (TextView) rootView.findViewById(R.id.returnToLogin);
         reg2Sign.setOnClickListener(new View.OnClickListener()
         {
@@ -56,6 +58,20 @@ public class RegisterFragment extends Fragment {
                 }
             }
         });
+
+        Button registerButton = (Button) rootView.findViewById(R.id.btn_register);
+        registerButton.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View view)
+            {
+                // check for non-null username
+                // check for non-null initial password
+                // check for matching passwords
+                // createAccount(username, password);
+                // go to MainActivity;
+            }
+        });
+
         return rootView;
     }
 
@@ -70,7 +86,7 @@ public class RegisterFragment extends Fragment {
 
     public void createAccount(String username, String password) {
 
-        // do a check and make sure that username is proprietary and that
+        // do a check and make sure that username is proprietary
 //        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("usernames/");
 //        if (ref == null) {
 //            Toast.makeText(getActivity(), "Username already exists.",
@@ -83,12 +99,23 @@ public class RegisterFragment extends Fragment {
         loginPage.onRegisterClicked();
         JSONObject profileInfo = loginPage.getProfileInfo();
 
+        String email = null;
+
+        try {
+            email = profileInfo.getString("email");
+        } catch (Exception e) {
+            Log.w(TAG, "getUserProfileJSONObject:failure", e);
+            Toast.makeText(getActivity(), "There is no email associated with this account.",
+                    Toast.LENGTH_SHORT).show();
+        }
+
         // if profileInto.email exists, say no
 //        Toast.makeText(getActivity(), "This spotify account is already associated with an account.",
 //                    Toast.LENGTH_SHORT).show();
 //            return;
         //
 
+        String finalEmail = email;
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
@@ -100,14 +127,14 @@ public class RegisterFragment extends Fragment {
 
 
                             assert user != null;
-                            Account newAccount = new Account(user.getUid(), username, email, password);
+                            Account newAccount = new Account(user.getUid(), username, finalEmail, password);
                             // push that user account to the firebase database
                             // Switch activities
                         } else {
-                            // If sign in fails, display a message to the user.
+                            // If creation fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(getActivity(), "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Authentication failed. Email retrieved from spotify invalid or bad password.",
+                                    Toast.LENGTH_LONG).show();
                         }
                     }
                 });

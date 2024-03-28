@@ -1,5 +1,3 @@
-import java.util.regex.Pattern.compile
-
 plugins {
     id("com.android.application")
     // Add the Google services Gradle plugin
@@ -16,8 +14,10 @@ buildscript {
         classpath("com.android.tools.build:gradle:7.0.4") // Android Gradle plugin version
         classpath("com.google.gms:google-services:4.4.1") // Google services plugin
         // other dependencies if needed
+
     }
 }
+
 android {
     namespace = "com.example.schmotify"
     compileSdk = 34
@@ -28,6 +28,9 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+
+        manifestPlaceholders["redirectSchemeName"] = "schmotify"
+        manifestPlaceholders["redirectHostName"] = "auth"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
