@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1026039450080",
+    "project_id": "schmotify-83152",
+    "storage_bucket": "schmotify-83152.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026039450080:android:b816aa7d839176fdf00385",
+        "android_client_info": {
+          "package_name": "com.example.schmotify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvgg-mBqt3fp-fx7Fg-9K8UyKItg96x_Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
